@@ -1,0 +1,9 @@
+- name : nginx deploy
+  hosts : myhosts
+  tasks:
+    - name : ping server
+      ansible.builtin.ping:
+
+    - name: print message
+      ansible.builtin.debug:
+        msg: "Hello, World!"

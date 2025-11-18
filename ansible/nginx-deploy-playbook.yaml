@@ -1,0 +1,24 @@
+- name: update config and Reload Nginx
+  hosts: all
+  become: yes
+  
+  tasks:
+    - name: Copy nginx configuration
+      copy:
+        src: ../nginx.conf
+        dest: /etc/nginx/nginx.conf
+        backup: yes
+    
+    - name: Test nginx configuration
+      command: nginx -t
+      register: nginx_test
+      
+    - name: Show test results
+      debug:
+        var: nginx_test.stderr_lines
+    
+    - name: Reload nginx
+      service:
+        name: nginx
+        state: reloaded
+      when: nginx_test.rc == 0
