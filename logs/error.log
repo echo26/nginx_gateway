@@ -1,0 +1,3 @@
+2025/11/17 15:55:23 [emerg] 804#804: open() "/etc/nginx/nginx.conf" failed (2: No such file or directory)
+2025/11/17 15:58:12 [emerg] 962#962: open() "/etc/nginx/nginx.conf" failed (2: No such file or directory)
+2025/11/17 15:58:26 [emerg] 981#981: open() "/etc/nginx/nginx.conf" failed (2: No such file or directory)
