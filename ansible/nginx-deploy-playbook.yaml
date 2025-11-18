@@ -12,6 +12,7 @@
     - name: Test nginx configuration
       command: nginx -t
       register: nginx_test
+      changed_when: false
       
     - name: Show test results
       debug:
